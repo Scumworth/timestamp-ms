@@ -8,11 +8,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/:id', (req, res, next) => {
+app.get('/:id', (req, res) => {
     const formattedDate = dateMaker.makeDate(req.params.id)
     console.log(formattedDate);
     res.send(formattedDate);
-    next();
 })
 
 app.listen(port, function(){
